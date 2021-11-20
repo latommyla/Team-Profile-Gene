@@ -27,6 +27,10 @@ To install this project, simply download the zip file or clone the SSH key to yo
 
 - Also will need to install inquirer.js package & jest
 
+## Test
+
+<img src="./images/runtest.png" alt="runtest" title="runtest">
+
 ## Contact 
 
 * [My Gmail](mailto:tommyl.dmd@gmail.com)
