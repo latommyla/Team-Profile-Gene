@@ -6,6 +6,8 @@ This project was for my UCSD Coding Bootcamp, creating a Team Profile Generator.
 
 * [GitHub Repo](https://github.com/latommyla/Team-Profile-Gene)
 
+https://user-images.githubusercontent.com/85325106/142718309-e28aa00e-17ad-400b-a419-aef35ded9d08.mp4
+
 ## Description 
 
 To build a Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. 
