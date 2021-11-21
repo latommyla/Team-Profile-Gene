@@ -1,21 +1,26 @@
+// Varibles for Manager, Engineer, & Intern
 const Manager = require('../lib/Manager');
 const Engineer = require('../lib/Engineer')
 const Intern = require('../lib/Intern')
 
 
+// Function to generate cards for each class
 function generateCards(team) {
   let cards = []
   for(let i = 0; i < team.length; i++) {
     const teamArray = team[i];
     switch(teamArray.getRole()) {
+      // Manager card
       case 'Manager':
         const manager = new Manager(teamArray.id, teamArray.name, teamArray.email, teamArray.officeNumber);
         cards.push(generateManagerCard(manager));
         break;
+      // Engineer card
       case 'Engineer':
         const engineer = new Engineer(teamArray.id, teamArray.name, teamArray.email, teamArray.github);
         cards.push(generateEngineerCard(engineer));
         break;
+      // Intern card
       case 'Intern':
         const intern = new Intern(teamArray.id, teamArray.name, teamArray.email, teamArray.school);
         cards.push(generateInternCard(intern));
@@ -25,6 +30,8 @@ function generateCards(team) {
   return cards.join(``)
 }
 
+
+// Generates Manager cards, gets name, role, ID, email and office number
 let generateManagerCard = (Manager) => {
   return `
   <div class="card m-1 shadow" style="width: 20rem">
@@ -43,6 +50,8 @@ let generateManagerCard = (Manager) => {
   `
 }
 
+
+// Generate Engineer cards, gets name, role, ID, email and github username
 let generateEngineerCard = (Engineer) => {
   return `
   <div class="card m-1 shadow" style="width: 20rem">
@@ -61,6 +70,7 @@ let generateEngineerCard = (Engineer) => {
   `
 };
 
+// Generate Intern cards, gets name, role, ID, email and school name
 let generateInternCard = (Intern) => {
   return `
   <div class="card m-1 shadow" style="width: 20rem">
@@ -79,6 +89,7 @@ let generateInternCard = (Intern) => {
   `
 }
 
+// Generate complete index.html file, creates cards accordingly to all user inputs
 function generateTeam(team) {
   console.log(team)
 return `

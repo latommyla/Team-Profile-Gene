@@ -1,3 +1,4 @@
+// Variables 
 const inquirer = require('inquirer');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
@@ -8,6 +9,7 @@ const generateTeam = require('./src/generateHTML');
 
 team = [];
 
+// Manager questions using inquirer prompts
 const managerQuestions = () => {
   inquirer.prompt([
     {
@@ -38,6 +40,7 @@ const managerQuestions = () => {
     }
   ])
 
+  // If adding new team members, gest to choose between Engineer or Intern, then questions gets prompted
   .then((managerAnswers) => {
     const manager = new Manager(managerAnswers.id, managerAnswers.name, managerAnswers.email, managerAnswers.officeNumber)
     team.push(manager)
@@ -56,6 +59,8 @@ const managerQuestions = () => {
   });
 };
 
+
+// Engineer questions using inquirer prompts
 const engineerQuestions = () => {
   inquirer.prompt([
     {
@@ -86,6 +91,7 @@ const engineerQuestions = () => {
     }
   ])
   
+  // If adding new team members, gest to choose between Engineer or Intern, then questions gets prompted
   .then((engineerAnswers) => {
     const engineer = new Engineer(engineerAnswers.id, engineerAnswers.name, engineerAnswers.email, engineerAnswers.github)
     team.push(engineer)
@@ -104,6 +110,7 @@ const engineerQuestions = () => {
   })
 };
 
+// Intern questions using inquirer prompts
 const internQuestions = () => {
   inquirer.prompt([
     {
@@ -133,6 +140,8 @@ const internQuestions = () => {
       choices: ['Engineer', 'Intern', 'Thats it!']
     }
   ])
+
+  // If adding new team members, gest to choose between Engineer or Intern, then questions gets prompted
   .then((internAnswers) => {
     const intern = new Intern(internAnswers.id, internAnswers.name, internAnswers.email, internAnswers.school)
     team.push(intern)
@@ -153,6 +162,7 @@ const internQuestions = () => {
 
 managerQuestions();
 
+// If user chooses That's It, index.html will then be created in ./dist folder
 function writeToFile(filename, data) {
   fs.writeFile(filename, data, (err) => {
     if(err) throw err;
