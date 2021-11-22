@@ -33,6 +33,12 @@ To install this project, simply download the zip file or clone the SSH key to yo
 
 <img src="./images/runtest.png" alt="runtest" title="runtest">
 
+## Preview 
+
+Final output of the generated HTML file.
+
+<img src="./images/htmldemo.png" alt="htmldemo" title="htmldemo">
+
 ## Contact 
 
 * [My Gmail](mailto:tommyl.dmd@gmail.com)
